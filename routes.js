@@ -35,7 +35,7 @@ router.post("/product/", upload.single("image"), (req, res) => {
       image,
     });
 
-    // res.sendFile(target);
+    res.sendFile(target);
   }
 });
 

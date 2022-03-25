@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const router = require("./routes");
 const log = require("./middlewares/logger");
+const port = 3000;
 
 app.use(log);
 app.use(express.urlencoded({extended: true}));
@@ -17,4 +18,5 @@ app.use((req, res, next) => {
   });
 });
 
-app.listen(3000, () => console.log("Server: http://localhost:3000"));
+app.listen(process.env.PORT || port, () => console.log("Server: http://localhost:3000"));
+// app.listen(3000, () => console.log("Server: http://localhost:3000"));
