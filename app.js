@@ -12,6 +12,7 @@ app.use('/public', express.static(path.join(__dirname, 'uploads')));
 app.use(router);
 app.use((req, res, next) => {
   res.status(404);
+  // res.setHeader('Content-Type', 'text/plain');
   res.send({
     status: "Failed",
     message: "Resource " + req.originalUrl + " not found",
@@ -19,4 +20,3 @@ app.use((req, res, next) => {
 });
 
 app.listen(process.env.PORT || port, () => console.log("Server: http://localhost:3000"));
-// app.listen(3000, () => console.log("Server: http://localhost:3000"));

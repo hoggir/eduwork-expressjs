@@ -14,6 +14,20 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/home", (req, res) => {
+  res.send({
+    status: "Succesfully",
+    message: "Home page",
+  });
+});
+
+router.get("/product", (req, res) => {
+  res.send({
+    status: "Succesfully",
+    message: "Product Page",
+  });
+});
+
 router.get("/product/:id", (req, res) => {
 //   console.log(req.query);
   res.json({
