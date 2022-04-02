@@ -9,6 +9,9 @@ const port = 3000;
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.get('/', (req, res) => {
+  res.send('Welcome to Home Page');
+});
 app.use("/public", express.static(path.join(__dirname, "uploads")));
 app.use("/api/v1", productRouter);
 app.use("/api/v2", productRouterV2);
